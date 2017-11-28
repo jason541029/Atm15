@@ -1,5 +1,6 @@
 package com.jason541029.atm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +16,10 @@ boolean logon = false
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if 
+        if (!logon){
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
